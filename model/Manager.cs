@@ -24,10 +24,10 @@ namespace Employees
         }
         public void fillTheForm()
         {
-            txt_name.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txt_surname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txt_passportnum.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txt_position.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txt_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txt_surname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txt_passportnum.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txt_position.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
 
         }
 
@@ -73,9 +73,11 @@ namespace Employees
             string passportnum = txt_passportnum.Text;
             string position = txt_position.Text;
 
-            dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
-            dataGridView1.Rows.Add(name, surname, passportnum, position);
-            //dataGridView1[2, dataGridView1.CurrentRow.Index].Value = name;
+            dataGridView1[1, dataGridView1.CurrentRow.Index].Value = name;
+            dataGridView1[2, dataGridView1.CurrentRow.Index].Value = surname;
+            dataGridView1[3, dataGridView1.CurrentRow.Index].Value = passportnum;
+            dataGridView1[4, dataGridView1.CurrentRow.Index].Value = position;
+
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -85,7 +87,8 @@ namespace Employees
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Add(txt_name.Text, txt_surname.Text, txt_passportnum.Text, txt_position.Text);
+            int i = int.Parse(dataGridView1[0, dataGridView1.Rows.Count - 1].Value.ToString()) + 1;
+            dataGridView1.Rows.Add(i, txt_name.Text, txt_surname.Text, txt_passportnum.Text, txt_position.Text);
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
