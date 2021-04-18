@@ -23,7 +23,7 @@ namespace Employees
             Username = username;
             InitializeComponent();
 
-            using (XLWorkbook wb = new XLWorkbook("../../employees.xlsx"))
+            using (XLWorkbook wb = new XLWorkbook("../../data/employees.xlsx"))
             {
                 var ws = wb.Worksheets.First();
                 var range = ws.RangeUsed();
