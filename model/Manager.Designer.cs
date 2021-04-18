@@ -36,7 +36,7 @@ namespace Employees
             this.btnSaveExcel = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_uptate = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.txt_position = new System.Windows.Forms.TextBox();
             this.lbl_position = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@ namespace Employees
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lbl_employees = new System.Windows.Forms.Label();
             this.employees_grid = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SURNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PASSPORTNUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@ namespace Employees
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PASSWORD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SALARY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox_empprocess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employees_grid)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,7 @@ namespace Employees
             this.groupBox_empprocess.Controls.Add(this.btnSaveExcel);
             this.groupBox_empprocess.Controls.Add(this.btn_add);
             this.groupBox_empprocess.Controls.Add(this.btn_delete);
-            this.groupBox_empprocess.Controls.Add(this.btn_uptate);
+            this.groupBox_empprocess.Controls.Add(this.btn_update);
             this.groupBox_empprocess.Controls.Add(this.btn_clear);
             this.groupBox_empprocess.Controls.Add(this.txt_position);
             this.groupBox_empprocess.Controls.Add(this.lbl_position);
@@ -104,6 +104,7 @@ namespace Employees
             // 
             // btn_delete
             // 
+            this.btn_delete.ForeColor = System.Drawing.Color.Red;
             this.btn_delete.Location = new System.Drawing.Point(17, 299);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(179, 23);
@@ -112,15 +113,15 @@ namespace Employees
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // btn_uptate
+            // btn_update
             // 
-            this.btn_uptate.Location = new System.Drawing.Point(17, 333);
-            this.btn_uptate.Name = "btn_uptate";
-            this.btn_uptate.Size = new System.Drawing.Size(179, 23);
-            this.btn_uptate.TabIndex = 4;
-            this.btn_uptate.Text = "uptate";
-            this.btn_uptate.UseVisualStyleBackColor = true;
-            this.btn_uptate.Click += new System.EventHandler(this.btn_uptate_Click);
+            this.btn_update.Location = new System.Drawing.Point(17, 333);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(179, 23);
+            this.btn_update.TabIndex = 4;
+            this.btn_update.Text = "update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_uptate_Click);
             // 
             // btn_clear
             // 
@@ -134,7 +135,7 @@ namespace Employees
             // 
             // txt_position
             // 
-            this.txt_position.Location = new System.Drawing.Point(116, 101);
+            this.txt_position.Location = new System.Drawing.Point(116, 103);
             this.txt_position.Name = "txt_position";
             this.txt_position.Size = new System.Drawing.Size(100, 19);
             this.txt_position.TabIndex = 1;
@@ -142,15 +143,16 @@ namespace Employees
             // lbl_position
             // 
             this.lbl_position.AutoSize = true;
+            this.lbl_position.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbl_position.Location = new System.Drawing.Point(15, 104);
             this.lbl_position.Name = "lbl_position";
-            this.lbl_position.Size = new System.Drawing.Size(47, 12);
+            this.lbl_position.Size = new System.Drawing.Size(62, 16);
             this.lbl_position.TabIndex = 0;
             this.lbl_position.Text = "position:";
             // 
             // txt_passportnum
             // 
-            this.txt_passportnum.Location = new System.Drawing.Point(116, 76);
+            this.txt_passportnum.Location = new System.Drawing.Point(116, 78);
             this.txt_passportnum.Name = "txt_passportnum";
             this.txt_passportnum.Size = new System.Drawing.Size(100, 19);
             this.txt_passportnum.TabIndex = 1;
@@ -158,15 +160,16 @@ namespace Employees
             // lbl_passportnum
             // 
             this.lbl_passportnum.AutoSize = true;
+            this.lbl_passportnum.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbl_passportnum.Location = new System.Drawing.Point(15, 79);
             this.lbl_passportnum.Name = "lbl_passportnum";
-            this.lbl_passportnum.Size = new System.Drawing.Size(74, 12);
+            this.lbl_passportnum.Size = new System.Drawing.Size(99, 16);
             this.lbl_passportnum.TabIndex = 0;
             this.lbl_passportnum.Text = "passportNum:";
             // 
             // txt_surname
             // 
-            this.txt_surname.Location = new System.Drawing.Point(116, 51);
+            this.txt_surname.Location = new System.Drawing.Point(116, 53);
             this.txt_surname.Name = "txt_surname";
             this.txt_surname.Size = new System.Drawing.Size(100, 19);
             this.txt_surname.TabIndex = 1;
@@ -174,15 +177,16 @@ namespace Employees
             // lbl_surname
             // 
             this.lbl_surname.AutoSize = true;
+            this.lbl_surname.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbl_surname.Location = new System.Drawing.Point(15, 54);
             this.lbl_surname.Name = "lbl_surname";
-            this.lbl_surname.Size = new System.Drawing.Size(50, 12);
+            this.lbl_surname.Size = new System.Drawing.Size(68, 16);
             this.lbl_surname.TabIndex = 0;
             this.lbl_surname.Text = "surname:";
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(116, 26);
+            this.txt_name.Location = new System.Drawing.Point(116, 28);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(100, 19);
             this.txt_name.TabIndex = 1;
@@ -190,21 +194,22 @@ namespace Employees
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
+            this.lbl_name.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbl_name.Location = new System.Drawing.Point(15, 29);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(34, 12);
+            this.lbl_name.Size = new System.Drawing.Size(47, 16);
             this.lbl_name.TabIndex = 0;
             this.lbl_name.Text = "name:";
             // 
             // lbl_employees
             // 
             this.lbl_employees.AutoSize = true;
-            this.lbl_employees.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_employees.Location = new System.Drawing.Point(464, 13);
+            this.lbl_employees.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_employees.Location = new System.Drawing.Point(255, 9);
             this.lbl_employees.Name = "lbl_employees";
-            this.lbl_employees.Size = new System.Drawing.Size(111, 22);
+            this.lbl_employees.Size = new System.Drawing.Size(104, 26);
             this.lbl_employees.TabIndex = 1;
-            this.lbl_employees.Text = "employees";
+            this.lbl_employees.Text = "Employees";
             // 
             // employees_grid
             // 
@@ -217,13 +222,12 @@ namespace Employees
             this.POSITION,
             this.USERNAME,
             this.PASSWORD,
-            this.SALARY
-            });
+            this.SALARY});
             this.employees_grid.Location = new System.Drawing.Point(260, 41);
             this.employees_grid.Name = "employees_grid";
             this.employees_grid.RowTemplate.Height = 21;
             this.employees_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employees_grid.Size = new System.Drawing.Size(583, 397);
+            this.employees_grid.Size = new System.Drawing.Size(719, 397);
             this.employees_grid.TabIndex = 2;
             this.employees_grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.employees_grid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
@@ -267,13 +271,12 @@ namespace Employees
             // 
             this.SALARY.HeaderText = "SALARY";
             this.SALARY.Name = "SALARY";
-
             // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 450);
+            this.ClientSize = new System.Drawing.Size(991, 450);
             this.Controls.Add(this.employees_grid);
             this.Controls.Add(this.lbl_employees);
             this.Controls.Add(this.groupBox_empprocess);
@@ -320,7 +323,7 @@ namespace Employees
         private System.Windows.Forms.DataGridViewTextBoxColumn PASSPORTNUM;
         private System.Windows.Forms.DataGridViewTextBoxColumn POSITION;
         private System.Windows.Forms.Button btn_clear;
-        private System.Windows.Forms.Button btn_uptate;
+        private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btnSaveExcel;
