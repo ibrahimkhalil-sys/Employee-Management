@@ -1,5 +1,5 @@
 ﻿using ClosedXML.Excel;
-using sirketiscileri.model;
+using Employees.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,12 +12,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sirketiscileri
+namespace Employees
 {
     public partial class Manager : Form
     {
-        List<Employees> employees;
-        public Manager(List<Employees> employees)
+        List<model.Employees> employees;
+        public Manager(List<model.Employees> employees)
         {
             InitializeComponent();
             this.employees = employees;
@@ -75,6 +75,7 @@ namespace sirketiscileri
 
             dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
             dataGridView1.Rows.Add(name, surname, passportnum, position);
+            //dataGridView1[2, dataGridView1.CurrentRow.Index].Value = name;
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -115,9 +116,7 @@ namespace sirketiscileri
 
         private void Manager_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Form1 frm = new Form1();
-            //frm.Show();
-            //this.Close();
+            Application.Exit();
         }
 
         private void btnSaveExcel_Click(object sender, EventArgs e)

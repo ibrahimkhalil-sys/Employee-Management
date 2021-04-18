@@ -1,5 +1,5 @@
 ﻿
-namespace sirketiscileri
+namespace Employees
 {
     partial class Login
     {

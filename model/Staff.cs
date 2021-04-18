@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sirketiscileri
+namespace Employees
 {
     public partial class Staff : Form
     {
@@ -49,9 +49,9 @@ namespace sirketiscileri
 
         public string Username { get; }
 
-        private void Staff_Load(object sender, EventArgs e)
+        private void Staff_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            Application.Exit();
         }
     }
 }

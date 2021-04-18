@@ -1,5 +1,5 @@
 ﻿using ClosedXML.Excel;
-using sirketiscileri.model;
+using Employees.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,11 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sirketiscileri
+namespace Employees
 {
     public partial class Login : Form
     {
-        List<Employees> employee = new List<Employees>();
+        List<model.Employees> employee = new List<model.Employees>();
 
         public Login()
         {

@@ -1,5 +1,5 @@
 ﻿
-namespace sirketiscileri
+namespace Employees
 {
     partial class Staff
     {
@@ -192,7 +192,7 @@ namespace sirketiscileri
             this.Controls.Add(this.lblName);
             this.Name = "Staff";
             this.Text = "Staff";
-            this.Load += new System.EventHandler(this.Staff_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Staff_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

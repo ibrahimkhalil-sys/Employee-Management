@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel;
 
-namespace sirketiscileri
+namespace Employees
 {
     partial class Manager
     {
