@@ -8,21 +8,38 @@ namespace Employees.model
 {
     public class Employees
     {
-       
+        #region PROPERTIES
         public string name { get; set; }
         public string surname { get; set; }
         public int passportNum { get; set; }
+
+        /// <summary>
+        /// staf bide manager olur
+        /// staf girende ferqli ekran acilir
+        /// manager girende ferqli ekran acilir
+        /// </summary>
         public string position { get; set; }
         public string salary { get; set; }
 
         public string username { get; set; }
         public String password { get; set; }
+        #endregion
 
         public Employees()
         {
 
         }
 
+        /// <summary>
+        /// constraktor iscinin melumatlari qeyd eliyr
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="surname"></param>
+        /// <param name="passportNum"></param>
+        /// <param name="position"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="salary"></param>
         public Employees(string name,string surname, int passportNum,string position,string username, string password, string salary = "")
         {
             this.name = name;
@@ -35,6 +52,7 @@ namespace Employees.model
             
         }
 
+        #region GET SET PROPERTIES
         public void setname(string name)
         {
             this.name = name;
@@ -85,5 +103,6 @@ namespace Employees.model
         {
             return "name-surname :" + this.name + "" + this.surname;
         }
+        #endregion
     }
 }

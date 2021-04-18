@@ -48,7 +48,7 @@ namespace Employees
             this.lbl_name = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lbl_employees = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.employees_grid = new System.Windows.Forms.DataGridView();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SURNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PASSPORTNUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,7 @@ namespace Employees
             this.SALARY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox_empprocess.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employees_grid)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox_empprocess
@@ -206,10 +206,10 @@ namespace Employees
             this.lbl_employees.TabIndex = 1;
             this.lbl_employees.Text = "employees";
             // 
-            // dataGridView1
+            // employees_grid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.employees_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employees_grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NAME,
             this.SURNAME,
@@ -219,14 +219,14 @@ namespace Employees
             this.PASSWORD,
             this.SALARY
             });
-            this.dataGridView1.Location = new System.Drawing.Point(260, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(583, 397);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            this.employees_grid.Location = new System.Drawing.Point(260, 41);
+            this.employees_grid.Name = "employees_grid";
+            this.employees_grid.RowTemplate.Height = 21;
+            this.employees_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employees_grid.Size = new System.Drawing.Size(583, 397);
+            this.employees_grid.TabIndex = 2;
+            this.employees_grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.employees_grid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // ID
             // 
@@ -274,7 +274,7 @@ namespace Employees
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.employees_grid);
             this.Controls.Add(this.lbl_employees);
             this.Controls.Add(this.groupBox_empprocess);
             this.Name = "Manager";
@@ -283,7 +283,7 @@ namespace Employees
             this.Load += new System.EventHandler(this.Manager_Load);
             this.groupBox_empprocess.ResumeLayout(false);
             this.groupBox_empprocess.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employees_grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,7 +314,7 @@ namespace Employees
         private System.Windows.Forms.Label lbl_name;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label lbl_employees;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView employees_grid;
         private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn SURNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn PASSPORTNUM;

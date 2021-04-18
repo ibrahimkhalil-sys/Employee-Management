@@ -13,16 +13,31 @@ namespace Employees
 {
     public partial class Staff : Form
     {
+        /// <summary>
+        /// user name property si
+        /// </summary>
+        public string Username { get; }
+
+        /// <summary>
+        /// konstraktor 
+        /// new eliyib caqirirsan
+        /// </summary>
         public Staff()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// konstraktor ama username goturur
+        /// </summary>
+        /// <param name="username">iscinin username</param>
 
         public Staff(string username)
         {
             Username = username;
             InitializeComponent();
 
+            //iscinin username axtarib tapir hemin melumatlari ekrana cixardir
             using (XLWorkbook wb = new XLWorkbook("../../data/employees.xlsx"))
             {
                 var ws = wb.Worksheets.First();
@@ -47,8 +62,14 @@ namespace Employees
             }
         }
 
-        public string Username { get; }
 
+
+        /// <summary>
+        /// form baqlama eventi
+        /// app bagliyir
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Staff_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
